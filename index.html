@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!--loader-->
+<div class="loader"></div>
+
+
+<!-- Add your site or application content here -->
+
+<!--game audio-->
+<audio id="loop" loop="loop" src="audio/loop.mp3" preload="auto"></audio>
+<audio id="nice-dan" src="audio/Sweep5.mp3" preload="auto"></audio>
+<audio id="rubble-dan" src="audio/Explosion1.mp3" preload="auto"></audio>
+
+<div class="logo">
+    <img src="img/logo.png">
+</div>
+
+<div class="clouds-container">
+    <img class="cloud1" src="img/cloud1.png">
+    <img class="cloud2" src="img/cloud2.png">
+    <img class="cloud3" src="img/cloud3.png">
+    <img class="cloud4" src="img/cloud1.png">
+    <img class="cloud5" src="img/cloud2.png">
+    <img class="cloud6" src="img/cloud3.png">
+</div>
+
+<div class="info-cta">i</div>
+
+<!--main container-->
+<div class="container">
+
+    <!-- left instructions -->
+    <div class="left-instructions disabled">
+        <img src="./img/demo-dan-instr-logo.png">
+
+        <h1>go big <span>or</span> go bust</h1>
+
+        <p>the power is in your hands!</p>
+
+        <div class="how-to-play">
+            <h2>How to Play:</h2>
+
+            <ol>
+                <li>Earn [VAR1] Rewards points each day to build each level of free credits – each level has a bigger
+                    bonus than the next!
+                </li>
+                <li>Warning! If you miss a day, a level will get torn down by Demolition Dan and you’ll lose credits!
+                </li>
+                <li>Claim your free credits on Monday</li>
+            </ol>
+
+            <h2>TIP:</h2>
+
+            <p>Play every day this week to get the maximum free credits!</p>
+        </div>
+
+        <button>
+            <img src="img/play-now-btn.png">
+        </button>
+
+    </div>
+
+   <!--score, status and Dan-->
+    <div class="status-container">
+
+        <!--turn off audio-->
+        <a href="#" onclick="stopIntro();"><img src="img/volume.png"></a>
+        <div class="status-content">
+            <div class="status-totals-container">
+                <h1></h1>
+
+                <div class="day-total">
+                    <h2>Day : <span></span></h2>
+
+                    <h3>your total:</h3>
+                    <h4>/<span class="red">115</span></h4>
+                </div>
+
+                <!--daily summary-->
+                <div class="summary-container">
+                    <ul>
+                        <li>you have built <span>VAR</span> levels</li>
+                        <li>you have demolished <span>VAR</span> levels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--builing-->
+    <div class="building-container">
+        <div class="inner-content">
+            <div class="broken-level disabled"></div>
+            <div class="level7"></div>
+            <div class="level6">
+                <img src="img/level6-sign.png" class="floating">
+            </div>
+            <div class="level5">
+                <img src="img/level4-chip1.png" class="chip1 spin">
+                <img src="img/level4-chip2.png" class="chip2 spin">
+            </div>
+            <div class="level4"></div>
+            <div class="level3">
+                <img src="img/level3-sign.png" class="pulse">
+            </div>
+            <div class="level2">
+                <img src="img/level2-sign.png">
+                <img src="img/level2-sign-text.png" class="img-text flicker">
+            </div>
+            <div class="level1"></div>
+        </div>
+
+        <!--status plus toast-->
+        <div id="toast" class="plus-toast floating2">
+            <img src="img/toast-polygon.png">
+            <div class="toast-content">
+                <p>
+                    <span>you won/lost!</span><br>
+                    This text will tell you what to do next
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--level built popup-->
+    <div class="popup-built-container disabled">
+        <div class="content">
+            <div class="inner-content">
+                <h1>nice work!</h1>
+                <p>By playing and wagering on your favourite games,you’ve built a floorof bonuses on <span class="bold">Demolition Dan</span>!
+                    <br><br>
+                    <span class="font-sm">Keep coming back to playevery day to unlock more floors.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!--level broken popup-->
+    <div class="popup-broken-container disabled">
+        <div class="content">
+            <div class="inner-content">
+                <h1>stand back!</h1>
+                <p>Because you didn’t play and wageron your favourite games,Demolition Dan has destroyedyour floor of bonuses!
+                    <br><br>
+                    <span>Rebuild and get bonuses by earning Rewards points and playing every day.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- game over popup-->
+    <div class="popup-game-over-container active">
+        <div class="content">
+            <div class="inner-content">
+                <h1>game over!</h1>
+                <p>
+                    You missed out on building a block of bonuses this week!<br><br>
+                    But good news! You can still get construction under way next week and receive free credits by playing Demolition Dan!
+                </p>
+                <button>
+                    continue to next stage
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- claim prize popup-->
+    <div class="popup-claim-prize-container disabled">
+        <div class="content">
+            <div class="inner-content">
+                <img src="img/claim-prize-coins.png">
+                <button>
+                    claim your prize
+                </button>
+                <p>and continue to the next stage</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-popup disabled">
+        <img src="img/progress-320-dan.png">
+        <div class="inner-content">
+            <div class="close">X</div>
+            <h1>your progress</h1>
+            <ul>
+                <li>you have built<br>{var} levels</li>
+                <li>you have demolished<br>{var} levels</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="progress" class="progress">
+        <span>progress</span>
+    </div>
+
+</div>
+
+<script src="js/vendor/jquery-1.11.3.min.js"></script>
+
+<script>
+
+</script>
+
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/moment.js"></script>
+
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

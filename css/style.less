@@ -1,0 +1,1598 @@
+@Playerfont: 'Press Start 2P', cursive;
+@Arimo: 'Arimo', sans-serif;
+
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #000 url('../img/loader.gif') no-repeat center center;
+  background-size: 100px;
+}
+
+.info-cta{
+  width: 35px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #222222;
+  color: #fff;
+  font-family: @Playerfont;
+  position: absolute;
+  top:5px;
+  left:5px;
+  z-index: 998;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.container {
+  margin: -5px auto;
+  width: 100%;
+  max-width: 1024px;
+  height: 770px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  .left-instructions {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    z-index: 110;
+
+    img {
+      margin: auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    h1 {
+      font-family: @Playerfont;
+      text-transform: uppercase;
+      font-size: 18px;
+      background: -webkit-linear-gradient(#b5520c, #ffef00, #b5520c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: 160px;
+      text-align: center;
+      margin: auto;
+      margin-top: 110px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    p {
+      color: #fff;
+      font-family: @Playerfont;
+      text-transform: uppercase;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .how-to-play {
+
+      h2 {
+        font-family: @Arimo;
+        color: #fff;
+        font-size: 15px;
+        margin: 0 0 0 10px;
+        width: 115px;
+        background-color: #3f505e;
+        box-sizing: border-box;
+        padding: 2px 0 2px 14px;
+      }
+
+      ol {
+        margin: 0;
+        li {
+          color: #fff;
+          font-family: @Arimo;
+          font-size: 15px;
+          padding: 5px 25px 10px 5px;
+        }
+      }
+      p {
+        font-size: 15px;
+        font-family: @Arimo;
+        color: #fff;
+        text-transform: none;
+        text-align: left;
+        margin: 5px auto;
+        width: 210px;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+    }
+
+  }
+
+  /*status and total container less/css*/
+  .status-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+
+    a {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    .status-content {
+      height: 245px;
+
+      .status-totals-container {
+        width: 250px;
+        height: 170px;
+        overflow: hidden;
+        margin: 5px auto;
+        border: 3px #dcc76c solid;
+        -webkit-border-radius: 0 0 30px 30px;
+        -moz-border-radius: 0 0 30px 30px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding-top: 8px;
+
+        h1 {
+          background-color: #e1d647;
+          font-family: @Playerfont;
+          font-size: 15px;
+          color: #161616;
+          text-align: center;
+          margin: 0;
+          padding: 5px 0;
+          text-transform: uppercase;
+        }
+
+        .summary-container {
+          background-color: rgba(174, 166, 182, 0.8);
+
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            border-top: 1px #a79eae solid;
+
+            li:nth-child(even) {
+              font-family: @Arimo;
+              font-size: 11px;
+              text-align: center;
+              border-bottom: 1px #a79eae solid;
+              text-transform: uppercase;
+              padding: 2px 0;
+            }
+
+            li:nth-child(odd) {
+              background-color: #f1e5f4;
+              color: #000;
+              font-weight: bold;
+              text-align: center;
+              text-transform: uppercase;
+              font-size: 11px;
+              padding: 2px 0;
+            }
+          }
+        }
+      }
+
+      .day-total {
+        height: 90px;
+
+        h2 {
+          margin: 0;
+          font-family: @Playerfont;
+          color: #fff;
+          font-size: 16px;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 5px 0;
+        }
+
+        h3 {
+          font-family: @Playerfont;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 10px;
+          text-align: center;
+          margin: 0;
+        }
+        h4 {
+          font-family: @Playerfont;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 32px;
+          text-align: center;
+          margin: 0;
+
+        }
+
+        h4::before {
+          content: url('../img/total-coin.png');
+        }
+      }
+    }
+  }
+
+  /*building and levels container less/css*/
+  .building-container {
+    width: 396px;
+    margin: auto;
+    height: 100%;
+    max-height: 570px;
+    padding-bottom: 38px;
+    position: relative;
+    background: url("../img/Sil_Desktop.png") no-repeat 13px 0px;
+
+    .inner-content {
+      position: absolute;
+      bottom: 80px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      width: 340px;
+
+      div {
+        float: right;
+        position: relative;
+        width: 325px;
+      }
+
+      .level1 {
+        background: url('../img/level1.png') no-repeat center;
+        height: 112px;
+        z-index: 1;
+        margin: 0 11px 0 0px;
+      }
+      .level2 {
+        background: url('../img/level2.png') no-repeat center;
+        height: 59px;
+        z-index: 2;
+
+        img {
+          margin-left: -26px;
+        }
+
+        .img-text {
+          left: 0;
+          position: absolute;
+        }
+      }
+      .level3 {
+        background: url('../img/level3.png') no-repeat center;
+        height: 61px;
+        z-index: 3;
+
+        img {
+          margin: auto;
+          left: 0;
+          right: 0;
+          position: absolute;
+        }
+
+      }
+      .level4 {
+        background: url('../img/level4.png') no-repeat center;
+        height: 64px;
+        z-index: 4;
+        margin: 0 0 -4px 0;
+
+      }
+      .level5 {
+        background: url('../img/level5.png') no-repeat center;
+        height: 65px;
+        z-index: 5;
+        margin: 0 0 -4px 0;
+
+        .chip1 {
+          float: left;
+          margin-left: 40px;
+        }
+        .chip2 {
+          float: right;
+          margin-right: 40px;
+        }
+      }
+      .level6 {
+        background: url('../img/level6.png') no-repeat center;
+        height: 59px;
+        z-index: 6;
+        margin-bottom: -1px;
+        margin-right: 4px;
+
+        img {
+          margin-left: -30px;
+          margin-top: -25px;
+        }
+      }
+      .level7 {
+        background: url('../img/level7.png') no-repeat center;
+        height: 106px;
+        z-index: 7;
+        margin-bottom: -4px;
+      }
+      .broken-level {
+        background: url('../img/broken-level.png') no-repeat center;
+        height: 54px;
+        z-index: 8;
+        margin-bottom: -1px
+      }
+    }
+    /*plus toast ie: total has increased less/css*/
+    .plus-toast {
+      width: 310px;
+      height: 100px;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      text-align: center;
+      top: 40%;
+
+      img {
+        margin: auto;
+        margin-bottom: 10px;
+      }
+
+      .toast-content {
+        width: 300px;
+        height: 50px;
+        border: 3px #fff solid;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background-color: #f8d71f;
+
+        p {
+          text-align: center;
+          font-family: @Playerfont;
+          font-size: 11px;
+          line-height: 1.1;
+          margin: 5px 0;
+
+          span {
+            font-size: 13px;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  /*popup for level built less/css*/
+  .popup-built-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .content {
+      background: url('../img/popup-level-built.png') center no-repeat;
+      width: 523px;
+      height: 248px;
+      margin: auto;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      padding-top: 110px;
+      cursor: pointer;
+
+      .inner-content {
+        width: 250px;
+        float: right;
+        padding-right: 40px;
+        text-align: center;
+
+        h1 {
+          text-transform: uppercase;
+          font-family: @Playerfont;
+          font-size: 22px;
+          color: #000;
+          margin: 0;
+        }
+        p {
+          font-family: @Arimo;
+          font-size: 12px;
+          color: #000;
+          margin: 5px 0;
+
+          .font-sm {
+            color: #984a3e;
+          }
+        }
+      }
+    }
+  }
+
+  /*popup for level destroyed less/css*/
+  .popup-broken-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .content {
+      background: url('../img/popup-level-broken.png') center no-repeat;
+      width: 570px;
+      height: 242px;
+      margin: auto;
+      top: 45%;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      padding-top: 110px;
+      cursor: pointer;
+
+      .inner-content {
+        width: 250px;
+        float: right;
+        padding-right: 50px;
+        text-align: center;
+        margin-top: 50px;
+
+        h1 {
+          text-transform: uppercase;
+          font-family: @Playerfont;
+          font-size: 22px;
+          color: #000;
+          margin: 0;
+        }
+        p {
+          font-family: @Arimo;
+          font-size: 12px;
+          color: #000;
+          margin: 5px 0;
+
+          span {
+            color: #984a3e;
+          }
+        }
+      }
+    }
+  }
+
+  /*popup for game over less/css*/
+  .popup-game-over-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .content {
+      background: url('../img/game-over-bg.png') center no-repeat;
+      width: 455px;
+      height: 206px;
+      margin: auto;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      cursor: pointer;
+
+      .inner-content {
+        width: 325px;
+        height: 195px;
+        float: none;
+        padding-right: 0px;
+        text-align: center;
+        margin: auto;
+
+        h1 {
+          text-transform: uppercase;
+          font-family: @Playerfont;
+          font-size: 22px;
+          color: #fff;
+          margin: 15px 0 0 0;
+        }
+
+        h1::before {
+          content: url('../img/game-over-face.png');
+          margin-right: 20px;
+          vertical-align: -35%;
+        }
+        p {
+          font-family: @Arimo;
+          font-size: 12px;
+          color: #fff;
+          margin: 2px 0 5px 0;
+        }
+        button {
+          background: url('../img/game-over-btn.png') no-repeat;
+          width: 320px;
+          height: 54px;
+          border: none;
+          font-family: @Playerfont;
+          font-size: 12px;
+          position: relative;
+        }
+
+        button::before {
+          content: url('../img/game-over-arrow.png');
+          position: absolute;
+          left: 10px;
+          top: 15px;
+        }
+      }
+    }
+  }
+
+  /*popup for claim prize less/css*/
+  .popup-claim-prize-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .content {
+      background: url('../img/claim-prize-bg.png') center no-repeat;
+      width: 380px;
+      height: 150px;
+      margin: auto;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      cursor: pointer;
+
+      .inner-content {
+        width: 385px;
+        height: 140px;
+        float: none;
+        padding-right: 0;
+        text-align: center;
+        margin: auto;
+
+        img {
+          float: left;
+          margin: 10px 0 0 20px;
+        }
+
+        h1 {
+          text-transform: uppercase;
+          font-family: @Playerfont;
+          font-size: 22px;
+          color: #fff;
+          margin: 15px 0 0 0;
+        }
+
+        h1::before {
+          content: url('../img/game-over-face.png');
+          margin-right: 20px;
+          vertical-align: -35%;
+        }
+        p {
+          font-family: @Arimo;
+          font-size: 15px;
+          color: #fff;
+          margin: 15px 25px 0 0;
+          float: right;
+        }
+        button {
+          background: url('../img/claim-prize-btn.png') no-repeat;
+          width: 220px;
+          height: 54px;
+          border: none;
+          font-family: @Playerfont;
+          float: right;
+          color: #f6d80d;
+          font-size: 15px;
+          margin: 23px 20px 0 0;
+          text-transform: uppercase;
+          line-height: 1;
+          position: relative;
+          padding-left: 30px;
+        }
+
+        button::before {
+          content: url('../img/claim-prize-arrow.png');
+          position: absolute;
+          top: 12px;
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.progress-popup {
+  display: none;
+}
+
+/*background images*/
+.week1 {
+  background: url("../img/week1-768.jpg") center bottom no-repeat;
+}
+
+.week2 {
+  background: url("../img/week2-768.jpg") center bottom no-repeat;
+}
+
+.week3 {
+  background: url("../img/week3-768.jpg") center bottom no-repeat;
+}
+
+.week4 {
+  background: url("../img/week4-768.jpg") center bottom no-repeat;
+}
+
+/*show or hide anything - use these classes*/
+.active {
+  display: block;
+}
+
+.disabled {
+  display: none;
+}
+
+.progress {
+  display: none;
+}
+
+/*.active-day{
+  background-color: #f1e5f4;
+  color: #000;
+  font-weight: bold;
+}*/
+
+/*total colors - increased = gold decreased = red*/
+.gold {
+  color: #f8d71f;
+}
+
+.red {
+  color: #fa424e;
+}
+
+/*dan men variations*/
+.rubble-dan {
+  background: url('../img/dan-rubble.png') no-repeat center 0;
+}
+
+.nice-dan {
+  background: url('../img/dan-nice-build.png') no-repeat center 0;
+}
+
+//blinking effect
+.blink_me {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 2;
+
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: 2;
+
+  animation-name: blinker;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 2;
+}
+
+@-moz-keyframes blinker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes blinker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+/*spin effect*/
+.spin {
+  -webkit-animation: 8s spin linear infinite;
+  -moz-animation: 8s spin linear infinite;
+  -ms-animation: 8s spin linear infinite;
+  -o-animation: 8s spin linear infinite;
+  animation: 8s spin linear infinite;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*pulse effect*/
+.pulse {
+  -webkit-animation: pulse 3s linear infinite;
+  -moz-animation: pulse 3s linear infinite;
+  -ms-animation: pulse 3s linear infinite;
+  animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+}
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+}
+
+@-ms-keyframes pulse {
+  0% {
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/*floating effect*/
+
+.floating {
+  -webkit-animation: 3s Floatingx infinite ease-in-out;
+  -moz-animation: 3s Floatingx infinite ease-in-out;
+
+  -ms-animation-duration: 3s;
+  -ms-animation-timing-function: ease-in-out;
+  -ms-animation-name:Floatingx ;
+  -ms-animation-iteration-count: infinite;
+  animation: 3s Floatingx infinite ease-in-out;
+
+}
+
+@-webkit-keyframes Floatingx {
+  from {
+    -webkit-transform: translate(0, 0px);
+  }
+  65% {
+    -webkit-transform: translate(0, 15px);
+  }
+  to {
+    -webkit-transform: translate(0, -0px);
+  }
+}
+
+@-moz-keyframes Floatingx {
+  from {
+    -moz-transform: translate(0, 0px);
+  }
+  65% {
+    -moz-transform: translate(0, 15px);
+  }
+  to {
+    -moz-transform: translate(0, -0px);
+  }
+}
+
+@-ms-keyframes Floatingx {
+  from {
+    -ms-transform: translate(0, 0px);
+  }
+  65% {
+    -ms-transform: translate(0, 15px);
+  }
+  to {
+    -ms-transform: translate(0, -0px);
+  }
+}
+
+.floating2 {
+  -webkit-animation: 1s Floating2 infinite ease-in-out;
+  -moz-animation: 1s Floating2 infinite ease-in-out;
+
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: ease-in-out;
+  -ms-animation-name:Floating2 ;
+  -ms-animation-iteration-count: infinite;
+
+}
+
+@-webkit-keyframes Floating2 {
+  from {
+    -webkit-transform: translate(0, 0px);
+  }
+  65% {
+    -webkit-transform: translate(0, 15px);
+  }
+  to {
+    -webkit-transform: translate(0, -0px);
+  }
+}
+
+@-moz-keyframes Floating2 {
+  from {
+    -moz-transform: translate(0, 0px);
+  }
+  65% {
+    -moz-transform: translate(0, 15px);
+  }
+  to {
+    -moz-transform: translate(0, -0px);
+  }
+}
+
+@-ms-keyframes Floating2 {
+  from {
+    -ms-transform: translate(0, 0px);
+  }
+  65% {
+    -ms-transform: translate(0, 15px);
+  }
+  to {
+    -ms-transform: translate(0, -0px);
+  }
+}
+
+/*flickering sign effect*/
+.flicker {
+  animation: lower 10s linear infinite;
+  -webkit-animation: lower 10s linear infinite;
+  -o-animation: lower 10s linear infinite;
+}
+
+@-webkit-keyframes lower {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.4;
+  }
+}
+
+@-moz-keyframes lower {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.4;
+  }
+}
+
+@-ms-keyframes lower {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.4;
+  }
+}
+
+@-webkit-keyframes cloud {
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-moz-keyframes cloud {
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-ms-keyframes cloud {
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-webkit-keyframes cloud2 {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-moz-keyframes cloud2 {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-ms-keyframes cloud2 {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-webkit-keyframes cloud3 {
+  0% {
+    left: -80%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-moz-keyframes cloud3 {
+  0% {
+    left: -80%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-ms-keyframes cloud3 {
+  0% {
+    left: -80%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-webkit-keyframes cloud4 {
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-moz-keyframes cloud4 {
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@-ms-keyframes cloud4 {
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+/*media queries*/
+@media (max-height: 999px) {
+  .clouds-container {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+@media (min-height: 1000px) {
+
+  .logo {
+    width: 100%;
+    max-width: 560px;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+
+  /*clouds*/
+  .clouds-container {
+    display: block;
+    width: 100%;
+    max-width: 1024px;
+    overflow: hidden;
+    position: absolute;
+    height: 500px;
+    top: 350px;
+
+    .cloud1 {
+      position: absolute;
+      left: 0;
+      -webkit-animation: cloud 100s linear infinite;
+    }
+
+    .cloud2 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      -webkit-animation: cloud4 60s linear infinite;
+    }
+    .cloud3 {
+      position: absolute;
+      left: 0%;
+      top: 50px;
+      -webkit-animation: cloud3 150s linear infinite;
+    }
+    .cloud4 {
+      position: absolute;
+      left: 0;
+      top: 140px;
+      width: 110px;
+      -webkit-animation: cloud2 120s linear infinite;
+    }
+    .cloud5 {
+      position: absolute;
+      left: 0;
+      top: 170px;
+      -webkit-animation: cloud3 90s linear infinite;
+    }
+    .cloud6 {
+      position: absolute;
+      left: 0;
+      width: 150px;
+      top: 260px;
+      -webkit-animation: cloud2 70s linear infinite;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+
+  .container {
+    transform: none;
+    bottom: 0;
+    height: 795px;
+
+    .building-container {
+      max-height: 590px;
+      background: url("../img/Sil_Desktop.png") no-repeat 13px 19px;
+    }
+  }
+}
+
+@media (max-width: 995px) {
+
+  /*  .week1 {
+      background: url("../img/week1-768.jpg") center bottom no-repeat ;
+    }
+
+    .week2 {
+      background: url("../img/week2-768.jpg") center bottom no-repeat ;
+    }
+
+    .week3 {
+      background: url("../img/week3-768.jpg") center bottom no-repeat ;
+    }
+
+    .week4 {
+      background: url("../img/week4-768.jpg") center bottom no-repeat;
+    }*/
+
+}
+
+@media (max-width: 525px) {
+
+  .container .status-container .status-content .status-totals-container {
+    height: 170px;
+    .day-total {
+      h2 {
+
+      }
+    }
+
+  }
+
+  .container .popup-built-container .content {
+    background: url('../img/popup-level-built-320.png') center no-repeat;
+    width: 308px;
+    height: 485px;
+
+    .inner-content {
+      width: 260px;
+      float: none;
+      padding-right: 0;
+      text-align: center;
+      margin: 275px auto;
+      line-height: 1;
+
+      h1 {
+        position: absolute;
+        top: 105px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        width: 200px;
+        height: 74px;
+      }
+      p {
+        font-family: @Arimo;
+        font-size: 19px;
+        color: #000;
+        .bold {
+          font-weight: bold;
+          color: #000;
+        }
+
+        .font-sm {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .container .popup-broken-container .content {
+    background: url('../img/popup-level-broken-320.png') center no-repeat;
+    width: 308px;
+    height: 511px;
+
+    .inner-content {
+      width: 280px;
+      float: none;
+      padding-right: 0;
+      text-align: center;
+      margin: 290px auto;
+
+      h1 {
+        position: absolute;
+        top: 100px;
+        width: 198px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        height: 78px;
+      }
+      p {
+        font-family: @Arimo;
+        font-size: 19px;
+        color: #000;
+        line-height: 1;
+
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .container .popup-game-over-container .content {
+    background: url('../img/game-over-320.png') center no-repeat;
+    width: 314px;
+    height: 492px;
+
+    .inner-content {
+
+      width: 265px;
+      height: 135px;
+      float: none;
+      padding-right: 0px;
+      text-align: center;
+      margin: 290px auto;
+
+      h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 200px;
+        margin: 10px auto;
+        color: #000;
+        line-height: 1;
+        text-align: center;
+      }
+
+      h1::before {
+        margin-right: 10px;
+        margin-left: -55px;
+        vertical-align: -50%;
+      }
+
+      button {
+        background: url('../img/game-over-320-btn.png') no-repeat;
+        width: 235px;
+        height: 52px;
+      }
+    }
+  }
+
+  .container .popup-claim-prize-container .content {
+    background: url('../img/claim-prize-320.png') center no-repeat;
+    width: 310px;
+    height: 364px;
+
+    .inner-content {
+      width: 275px;
+      height: 140px;
+      float: none;
+      padding-right: 0;
+      text-align: center;
+      margin: 200px auto;
+
+      p {
+        float: none;
+        margin: 15px auto;
+      }
+
+      button {
+        float: none;
+        margin: auto;
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .progress {
+    background: url('../img/progress-btn.png') center no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 146px;
+    height: 40px;
+    z-index: 12;
+    text-align: center;
+    display: block;
+
+    span {
+      color: #fff;
+      text-transform: uppercase;
+      font-family: @Playerfont;
+      font-size: 12px;
+      position: absolute;
+      margin: 10px auto;
+      left: 0;
+      right: 0;
+    }
+
+    span::after {
+      content: url('../img/progress-btn-arrows.png');
+      margin-left: 10px;
+    }
+  }
+
+  .progress-popup {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 120;
+
+    img {
+      margin: 110px auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    .inner-content {
+      width: 300px;
+      height: 225px;
+      border: 3px #a9a238 solid;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      margin: auto;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      background-color: #000;
+
+      .close {
+        position: absolute;
+        top: -28px;
+        right: -4px;
+        border: 3px #a9a238 solid;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        z-index: 10;
+        color: #fff;
+        padding: 4px 0px 0 2px;
+        background-color: #000;
+        font-size: 20px;
+        text-align: center;
+        font-family: @Playerfont;
+      }
+
+      h1 {
+        margin-top: 25px;
+        font-size: 20px;
+        text-align: center;
+        background-color: #acb413;
+        padding: 5px 0;
+        text-transform: uppercase;
+        color: #000;
+        font-family: @Playerfont;
+      }
+
+      ul {
+        padding: 0;
+        list-style-type: none;
+        text-transform: uppercase;
+        li:nth-child(1) {
+          height: 55px;
+          text-align: center;
+          font-size: 18px;
+          background-color: #c0bebe;
+          padding-top: 5px;
+        }
+        li:nth-child(2) {
+          text-align: center;
+          font-size: 18px;
+          height: 55px;
+          background-color: #928e8d;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .week1 {
+    background: url("../img/week1-320.jpg") center bottom no-repeat;
+  }
+
+  .week2 {
+    background: url("../img/week2-320.jpg") center bottom no-repeat;
+  }
+
+  .week3 {
+    background: url("../img/week3-320.jpg") center bottom no-repeat;
+  }
+
+  .week4 {
+    background: url("../img/week4-320.jpg") center bottom no-repeat;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    height: 700px;
+    position: relative;
+    transform: none;
+    top: 0;
+    .building-container {
+      width: 100%;
+      max-height: 500px;
+      background: url("../img/silhouette_mobile2.png") no-repeat center -57px;
+
+      .inner-content {
+        width: 100%;
+        max-width: 323px;
+        bottom: 30px;
+      }
+    }
+  }
+
+  .container .status-container{
+    height: 150px;
+  }
+
+  .progress-popup img {
+    margin: 60px auto;
+  }
+
+  .container .building-container .inner-content .level5 .chip1 {
+    margin-left: 65px;
+  }
+
+  .container .building-container .inner-content .level3 img {
+    left: 40px;
+  }
+
+  .container .building-container .inner-content {
+
+    .broken-level {
+      background: url('../img/broken-level-320.png') 39px -8px no-repeat;
+      height: 47px;
+      margin-bottom: -2px;
+    }
+
+    .level7 {
+      background: url('../img/level7-320.png') 32px -8px no-repeat;
+    }
+
+    .level6 {
+      background: url('../img/level6-320.png') 34px -1px no-repeat;
+      height: 56px;
+      margin-right: 1px;
+
+      img {
+        width: 50px;
+        margin-left: -6px;
+      }
+    }
+
+    .level5 {
+      background: url('../img/level5-320.png') 37px no-repeat;
+      height: 58px;
+    }
+
+    .level4 {
+      background: url('../img/level4-320.png') 40px no-repeat;
+      height: 59px;
+    }
+
+    .level3 {
+      background: url('../img/level3-320.png') 36px no-repeat;
+      height: 53px;
+    }
+
+    .level2 {
+      background: url('../img/level2-320.png') 39px no-repeat;
+      height: 53px;
+
+      img {
+        margin-left: 0px;
+      }
+    }
+    .level1 {
+      background: url('../img/level1-320.png') 27px no-repeat;
+      height: 100px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+}
+
+
+
+
+
+
